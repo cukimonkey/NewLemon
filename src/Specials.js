@@ -44,9 +44,9 @@ const Specials = () => {
                 </ButtonGroup>
        </Flex>
        <Flex className="cards"
-       display='grid'
-       gridTemplateColumns= '1fr 1fr 1fr'
-       gap='20'
+       display= 'flex'
+       flexWrap= 'wrap'
+       justifyContent= 'space-between'
        paddingTop= '50px'
        
         >

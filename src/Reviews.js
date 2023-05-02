@@ -3,13 +3,12 @@ import { Card as ChakraCard, CardFooter, Stack, HStack, Image, Heading, Text, Di
 import React from "react";
 import './App.css';
 
-function Reviews ({ name, imageSrc })  {
+function Reviews ({ imageSrc, name })  {
 return(
   <ChakraCard className="CardContainer" 
   style={{
       backgroundColor: '#EDEFEE',
-      borderTopRightRadius: '16px',
-      borderTopLeftRadius: '16px',
+      borderRadius: '16px',
       paddingBottom: '20px',
 
     }}>
@@ -28,7 +27,8 @@ return(
         src={imageSrc} 
         style={{
         height: '70px',
-        width: '70px'
+        width: '70px',
+        padding: '20px'
         }} 
         alt='user'
         />
@@ -47,7 +47,8 @@ return(
       <ChakraButton style={{
         border: 'none',
         bottom: '5px',
-        paddingTop: '20px'
+        paddingTop: '10px',
+        paddingLeft: '20px'
       }}>
         See review
       </ChakraButton>

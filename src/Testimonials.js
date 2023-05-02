@@ -29,15 +29,15 @@ const Testimonials = () => {
     paddingTop= '50px'
     paddingButtom= '50px'>
       <Container >
-      <Flex minWidth='max-content' gap='2'>
+      <Flex display='flex' justifyContent='center'>
                 <Box >
                   <h1>Testimonials</h1>
                 </Box>
        </Flex>
        <Flex className="cards2"
-       display='grid'
-       gridTemplateColumns= '1fr 1fr 1fr'
-       gap='20'
+       display= 'flex'
+       flexWrap= 'wrap'
+       justifyContent= 'space-between'
        paddingTop= '50px'
 
         >
@@ -45,8 +45,8 @@ const Testimonials = () => {
 
             <Reviews
                 imageSrc={reviews.getImageSrc()}
-                key={reviews.title}
-                name={reviews.title}
+                key={reviews.name}
+                name={reviews.name}
             />
           ))}
 
