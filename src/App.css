@@ -57,3 +57,13 @@
   margin-top: 10px;
   margin-bottom: 30px;
 }
+
+.button2 {
+  background-color: #F4CE14;
+  font-size: 20px;
+  font-family:'Markazi Text';
+  width: 200px;
+  height: 60px;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)
+}
