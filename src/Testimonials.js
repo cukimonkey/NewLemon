@@ -39,6 +39,7 @@ const Testimonials = () => {
        display= 'flex'
        flexWrap= 'wrap'
        justifyContent= 'space-between'
+       flexShrink= '0'
        gap='20'
        paddingTop= '50px'
 

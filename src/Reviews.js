@@ -11,11 +11,10 @@ return(
       borderRadius: '16px',
       paddingBottom: '20px',
       marginBottom: '100px',
-      
 
     }}>
       
-    <Stack >
+    <Stack width='300px'>
         
             <Heading className="ReviewHeader" style={{
               fontSize: "24px", 
