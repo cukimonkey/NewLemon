@@ -45,13 +45,12 @@ return(
     <Divider />
   <CardFooter>
     <ButtonGroup spacing='4'>
-      <ChakraButton style={{
+      <ChakraButton className='button3' style={{
         border: 'none',
         background: 'none',
         bottom: '5px',
         paddingTop: '10px',
         paddingLeft: '20px',
-        color: '#EE9972'
       }}>
         See review
       </ChakraButton>

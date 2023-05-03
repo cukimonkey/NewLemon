@@ -55,7 +55,7 @@ return(
     <Divider />
   <CardFooter>
     <ButtonGroup spacing='4'>
-      <ChakraButton style={{
+      <ChakraButton className='button3' style={{
         border: 'none',
         margin: '20px',
         position: 'absolute',

@@ -63,7 +63,19 @@ nav select {
   border-radius: 16px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)
 }
+.button2:hover {
+  background-color: #EE9972;
 
+  font-size: 20px;
+  font-family:'Markazi Text';
+  width: 200px;
+  height: 60px;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)
+}
+.button3:hover {
+  color: #EE9972;
+}
 /* About Section */
 
 .box2 h1 {
