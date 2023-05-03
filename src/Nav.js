@@ -16,13 +16,13 @@ function Nav(){
                 <img className="navLogo" src={process.env.PUBLIC_URL + "/Main logo.png"} height="40px" alt="logo" />
             </div>
             <div className="menuBar" 
-            style={{
-            display: 'flex',
-            justifyContent: 'flex-end',
-            alignItems: 'center',
-            gap: '18px'
-        }}>
-            <ul>
+            >
+            <ul className="navElements" style={{
+                            display: 'flex',
+                            justifyContent: 'flex-end',
+                            alignItems: 'center',
+                            gap: '18px'
+                        }}>
                 <Link to="/" className="active">Home</Link>
                 <Link to="/about">About</Link>
                 <Link to="/menu">Menu</Link>

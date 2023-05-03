@@ -8,13 +8,17 @@ return (
       <Flex style={{
         display: "flex",
         justifyContent: "space-between",
-        width: "100%"
+        background: '#EDEFEE',
+        paddingLeft: '10%',
+        paddingRight: '10%',
+        paddingTop: '50px',
+        paddingBottom: '50px'
     }}>
-      <Box className="footerelement">
+      <Box className="footerElement">
             <img className="footerlogo" src={process.env.PUBLIC_URL + "/Footer logo.png"} height="150px" alt="logo"/>
       </Box>
-      <Box className="footerelement">
-        <ul className="footerlist">
+      <Box className="footerElement">
+        <ul className="footerList">
             <li>Home</li>
             <li>About</li>
             <li>Menu</li>
@@ -23,15 +27,15 @@ return (
             <li>Login</li>
         </ul>
         </Box>
-      <Box className="footerelement">
-        <ul className="footerlist">
+      <Box className="footerElement">
+        <ul className="footerList">
             <li>Address</li>
             <li>Phone number</li>
             <li>Email</li>
         </ul>
       </Box>
       <Box className="footerelement">
-      <ul className="footerlist">
+      <ul className="footerList">
             <li>Facebook</li>
             <li>Instagram</li>
             <li>Twitter</li>

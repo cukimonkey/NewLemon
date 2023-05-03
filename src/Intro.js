@@ -13,7 +13,7 @@ const  Intro = () =>  (
         paddingLeft: '10%',
         paddingRight: '10%',
         paddingTop: '50px',
-        paddingBlock: '50px'
+        paddingBottom: '50px'
      }}>
    
    <Box className="box"
