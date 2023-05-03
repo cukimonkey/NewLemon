@@ -22,13 +22,25 @@ function Nav(){
             alignItems: 'center',
             gap: '18px'
         }}>
-                <Link to="/">Home</Link>
+            <ul>
+                <Link to="/" className="active">Home</Link>
                 <Link to="/about">About</Link>
                 <Link to="/menu">Menu</Link>
                 <Link to="/booking">Reservations</Link>
                 <Link to="/order-online">Order Online</Link>
                 <Link to="/login">Login</Link>
+                </ul>
         </div>
+             <select> 
+            <option value="" selected="selected">Select</option>
+            <option value="/">Home</option> 
+            <option value="/about">About</option> 
+            <option value="/menu">Menu</option> 
+            <option value="/booking">Reservations</option> 
+            <option value="/order-online">Order Online</option> 
+            <option value="/login">Login</option> 
+  </select> 
+
       </nav>
 );
 }

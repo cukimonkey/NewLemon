@@ -11,6 +11,14 @@
 .App {
   text-align: center;
 }
+/* NavBar */
+nav select {
+  display: none;
+}
+@media (max-width: 960px) {
+  nav ul   { display: none; }
+  nav select { display: flex; justify-content: flex-end }
+}
 
 
 /*Intro section*/
@@ -76,7 +84,6 @@
   margin-bottom: 30px;
 }
 
-/*About Section*/
 .imageBox {
   display: flex;
     flex-wrap: wrap;
