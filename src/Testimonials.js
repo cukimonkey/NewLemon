@@ -27,7 +27,8 @@ const Testimonials = () => {
     <Box paddingLeft= '10%'
     paddingRight= '10%'
     paddingTop= '50px'
-    paddingButtom= '50px'>
+    paddingButtom= '50px'
+    backgroundColor= '#EDEFEE'>
       <Container >
       <Flex display='flex' justifyContent='center'>
                 <Box >
@@ -38,6 +39,7 @@ const Testimonials = () => {
        display= 'flex'
        flexWrap= 'wrap'
        justifyContent= 'space-between'
+       gap='20'
        paddingTop= '50px'
 
         >

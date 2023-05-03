@@ -6,9 +6,9 @@ import './App.css';
 const  Intro = () =>  (
 <Flex className='flex1' 
     style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
-        gridGap: '20px',
+        display:'flex',
+         flexWrap: 'wrap',
+         flexGrow: '1',
         background: '#495E57',
         paddingLeft: '10%',
         paddingRight: '10%',
@@ -21,6 +21,7 @@ const  Intro = () =>  (
     textAlign: 'left',
     paddingLeft: '10%',
     paddingRight: '10%',
+    maxWidth: '400px'
 
  }}>
         <h1>Little Lemon</h1>
@@ -30,7 +31,7 @@ const  Intro = () =>  (
         
         >Reserve a Table</button>
     </Box>
-    <Box className="box">
+    <Box className="imageBox">
         <img src={process.env.PUBLIC_URL + "/restaurantfood.jpg"} height='400px' style={{ borderRadius: '16px' }} alt="restaurantfood"/>
     </Box>
   </Flex>

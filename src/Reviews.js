@@ -7,9 +7,11 @@ function Reviews ({ imageSrc, name })  {
 return(
   <ChakraCard className="CardContainer" 
   style={{
-      backgroundColor: '#EDEFEE',
+      backgroundColor: 'white',
       borderRadius: '16px',
       paddingBottom: '20px',
+      marginBottom: '100px',
+      
 
     }}>
       
@@ -35,7 +37,7 @@ return(
         <Text className="UserName" style={{
           fontSize: "16px", 
           fontFamily: 'Karla',
-          margin: '20px', 
+          marginRight: '20px', 
           textAlign: 'start'
           }}>{name}</Text>
     </HStack>
@@ -46,9 +48,11 @@ return(
     <ButtonGroup spacing='4'>
       <ChakraButton style={{
         border: 'none',
+        background: 'none',
         bottom: '5px',
         paddingTop: '10px',
-        paddingLeft: '20px'
+        paddingLeft: '20px',
+        color: '#EE9972'
       }}>
         See review
       </ChakraButton>

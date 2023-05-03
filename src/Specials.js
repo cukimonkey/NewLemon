@@ -34,20 +34,22 @@ const Specials = () => {
     paddingTop= '50px'
     paddingButtom= '50px'>
       <Container >
-      <Flex minWidth='max-content' gap='2'>
+      <Flex display='flex' flexWrap= 'wrap' gap='20'>
                 <Box >
                   <h1>This week specials!</h1>
                 </Box>
                 <Spacer />
                 <ButtonGroup>
-                  <Button className="button2">Sign Up</Button>
+                  <Button className="button2">Online Menu</Button>
                 </ButtonGroup>
        </Flex>
        <Flex className="cards"
        display= 'flex'
        flexWrap= 'wrap'
        justifyContent= 'space-between'
+       gap='20'
        paddingTop= '50px'
+       margin= '10px'
        
         >
           {specials.map((specials) => (
