@@ -36,12 +36,7 @@ const Testimonials = () => {
                 </Box>
        </Flex>
        <Flex className="cards2"
-       display= 'flex'
-       flexWrap= 'wrap'
-       justifyContent= 'space-between'
-       flexShrink= '0'
-       gap='20'
-       paddingTop= '50px'
+       
 
         >
           {reviews.map((reviews) => (

@@ -32,8 +32,6 @@ Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit 
     <Box className="imageBox">
         <img src={process.env.PUBLIC_URL + "/restaurantfood.jpg"}
         style={{ 
-            display: 'flex',
-            
             height:'400px',
             borderRadius: '16px',
             }} 
