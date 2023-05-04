@@ -1,6 +1,18 @@
+import './App.css';
+import BookingForm from "./BookingForm";
+
 function BookingPage() {
     return (
-        <h1>Booking</h1>
+        <div className='bookingForm' style={{
+            display: 'flex',
+       flexWrap: 'wrap',
+       justifyContent: 'center',
+       flexShrink: '0',
+       gap:'20',
+       paddingTop: '50px'
+        }}>
+        <BookingForm />
+        </div>
     )
 }
 
