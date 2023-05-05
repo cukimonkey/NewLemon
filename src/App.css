@@ -117,3 +117,24 @@ nav select {
   color: #fff;
   box-shadow: inset 200px 0 0 0 #F4CE14;;
 }
+
+/* Form styles*/
+
+input, select {
+  box-sizing: border-box;
+        height: 39px;
+        width: 426px;
+        border: 1px solid #495E57;
+        border-radius: 20px;
+        padding-left: 20px;
+        font-size: 16px;
+}
+
+form {
+  display: inline;
+  text-align: left;
+  font-family:'Markazi Text';
+  font-size: 20px;
+  font-weight: bold;
+
+}

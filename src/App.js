@@ -1,7 +1,7 @@
 
 import './App.css';
 import HomePage from './HomePage';
-import BookingForm from './BookingForm';
+import BookingPage from './BookingPage';
 import Nav from './Nav';
 import Footer from './Footer';
 import {Routes, Route} from 'react-router-dom';
@@ -12,7 +12,7 @@ function App() {
       <Nav />
       <Routes> 
         <Route path="/" element={<HomePage />}></Route>
-        <Route path="/booking" element={<BookingForm />}></Route>
+        <Route path="/booking" element={<BookingPage />}></Route>
       </Routes>
       <Footer/>
     </div>
