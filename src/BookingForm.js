@@ -22,6 +22,7 @@ const BookingForm = () => {
       const handleSubmit = (event) => {
         event.preventDefault();
         alert(inputs);
+        setInputs('');
       }
 
       const timeOptions = availableTimes.map((time) => (
@@ -32,7 +33,7 @@ const BookingForm = () => {
 
     return (
         
-    <form onSubmit={handleSubmit} className='BookingForm' style={{display: "grid", maxWidth: "300px", gap: '20px'}}>
+    <form onSubmit={handleSubmit} className='BookingForm' style={{display: "grid", grid: '1fr', gap: '20px'}}>
        <label>Enter your name:</label>
         <input type='text' name="username" value={inputs.username || ""} onChange={handleChange}/>
 

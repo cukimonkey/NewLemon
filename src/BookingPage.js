@@ -4,21 +4,21 @@ import BookingForm from "./BookingForm";
 
 function BookingPage() {
     return (
-        <div className='bookingForm' style={{
-            display: 'flex',
-       flexWrap: 'wrap',
-       justifyContent: 'center',
-       flexShrink: '0',
-       gap:'20',
-       paddingTop: '50px',
-       paddingBottom: '50px'
+        
+        <VStack style={{
+            width: '100%',
+            paddingLeft: '50px',
+            display: 'grid',
+            gridColumn: '1fr',
+            marginTop: '50px',
+            marginBottom: '50px',
+            justifyContent: 'center'
         }}>
-        <VStack>
         <h1 textAlign='center'>Book your Table</h1>
         <br></br>
         <BookingForm />
         </VStack>
-        </div>
+        
     )
 }
 
