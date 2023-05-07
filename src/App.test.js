@@ -1,6 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import BookingPage from './BookingPage';
-import { initializeTimes, updateTimes } from './BookingPage';
+import { renderHook } from '@testing-library/react-hooks';
+import { useInitializeTimes } from './BookingPage';
+
 
 test('Renders the BookingForm heading', () => {
   render(<BookingPage />);
@@ -8,17 +10,41 @@ test('Renders the BookingForm heading', () => {
   expect(headingElement).toBeInTheDocument();
 })
 
-//Testing the updateTimes and initializeTimes functions
-test('initializeTimes returns an array of strings', () => {
-  const times = initializeTimes();
-  expect(Array.isArray(times)).toBe(true);
-  expect(times.every((t) => typeof t === 'string')).toBe(true);
+//Testing useInitializeTimes function
+test('useInitializeTimes retrieves available times', async () => {
+  // Set up a mock response
+  const mockResponse = { availableTimes: ['17:00', '18:00', '19:00', '20:00', '21:00'] };
+  global.fetch = jest.fn(() =>
+    Promise.resolve({
+      json: () => Promise.resolve(mockResponse),
+    })
+  );
+
+  // Render the hook
+  const { result, waitForNextUpdate } = renderHook(() => useInitializeTimes());
+
+  // Wait for the hook to finish fetching data
+  await waitForNextUpdate();
+
+  // Expect the hook to return the expected data
+  expect(result.current).toEqual(mockResponse.availableTimes);
 });
 
+//Test updateTime function
+test('updateTimes updates the state correctly', async () => {
+  const state = ['17:00', '18:00', '19:00', '20:00', '21:00'];
+  const newState = ['17:00', '18:00', '19:00', '20:00', '21:00'];
 
-test('updateTimes returns the same value as provided in state', () => {
-  const date = '2023-05-10'; // arbitrary date for testing purposes
-  const currentState = ['17:00', '18:00', '19:00', '20:00', '21:00'];
-  const updatedTimes = updateTimes(currentState, date);
-  expect(updatedTimes).toEqual(['17:00', '18:00', '19:00', '20:00', '21:00']);
+  // Mock the fetch function to return the new state
+  global.fetch = jest.fn(() =>
+    Promise.resolve({
+      json: () => Promise.resolve({ availableTimes: newState }),
+    })
+  );
+
+  // Call the updateTimes function
+  const updatedState = await updateTimes(state, '2023-05-07');
+
+  // Expect the state to be updated correctly
+  expect(updatedState).toEqual(newState);
 });

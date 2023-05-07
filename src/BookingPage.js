@@ -1,35 +1,65 @@
 import { VStack } from '@chakra-ui/react';
 import './App.css';
 import BookingForm from "./BookingForm";
-import React, { useReducer } from 'react';
+import React, { useReducer, useEffect } from 'react';
+import { fetchAPI } from './api';
 
 
-
-  const initializeTimes = () => {
+const initializeTimes = async () => {
     // Use the current date to initialize the available times
-    const newTimes = ['17:00', '18:00', '19:00', '20:00', '21:00'];
-    return newTimes;
-  }
-  const updateTimes = (state, date) => {
-    // Use the selected date to update the available times
-    const newTimes = ['17:00', '18:00', '19:00', '20:00', '21:00'];
-    return newTimes;
-  }
-function reducer(state, action) {
-  switch (action.type) {
-    case 'update':
-      return updateTimes(state, action.date);
-    default:
-      throw new Error();
+    try{
+    const today = new Date();
+    const availableTimes = await fetchAPI(today);
+    return availableTimes || [];
+    
+  } catch (error) {
+    console.error(error);
+    return [];
   }
 }
+
+  const updateTimes = async (state, date) => {
+    // Convert the date string to a Date object
+    const dateObj = new Date(date);
+    // Use the selected date to update the available times
+    console.log("updateTimes called with date:", dateObj);
+    const availableTimes = await fetchAPI(dateObj);
+    console.log("fetchAPI returned:", availableTimes);
+    return {
+        type: 'update',
+        payload: availableTimes,
+      };
+    };
+
+    function reducer(state, action) {
+        switch (action.type) {
+          case 'update':
+            return action.payload;
+          default:
+            throw new Error();
+        }
+      }
 
 
 export { initializeTimes, updateTimes };
 
 function BookingPage() {  
-
-    const [availableTimes, dispatch] = useReducer(reducer, [], initializeTimes);
+    const [availableTimes, dispatch] = useReducer(reducer, []);
+  
+    useEffect(() => {
+      const initializeTimes = async () => {
+        const today = new Date();
+        const availableTimes = await fetchAPI(today);
+        dispatch({ type: 'update', payload: availableTimes });
+      }
+      initializeTimes();
+    }, [dispatch]);
+  
+    const handleDateChange = async (date) => {
+      const availableTimes = await fetchAPI(date);
+      dispatch({ type: 'update', payload: availableTimes });
+    };
+  
 return (
         
         <VStack style={{
@@ -43,13 +73,10 @@ return (
         }}>
         <h1 textAlign='center'>Book your Table</h1>
         <br></br>
-        <BookingForm availableTimes={availableTimes} dispatch={dispatch}/>
+        <BookingForm availableTimes={availableTimes} handleDateChange={handleDateChange}/>
         </VStack>
         
     )
 }
 
 export default BookingPage;
-
-
-
