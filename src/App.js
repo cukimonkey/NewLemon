@@ -6,6 +6,9 @@ import Nav from './Nav';
 import Footer from './Footer';
 import {Routes, Route} from 'react-router-dom';
 
+
+
+
 function App() {
   return (
     <div className='App'>

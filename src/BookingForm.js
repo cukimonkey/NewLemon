@@ -1,19 +1,10 @@
 import React, {useState} from "react";
 
 
-const BookingForm = () => {
-
-
+const BookingForm = ({ availableTimes, dispatch }) => {
     const [inputs, setInputs] = useState({});
     const [errors, setErrors]= useState({});
-    const  availableTimes = [
-        '17:00', 
-        '18:00',
-        '19:00',
-        '20:00',
-        '21:00'
-    ]
-
+    
     const occasions = [
         "Birthday",
         "Anniversary",
@@ -61,6 +52,10 @@ const BookingForm = () => {
         <option key={options} value={options}>{options}</option>
       ));
 
+      const handleDateChange = (event) => {
+        const date = event.target.value;
+        dispatch({ type: 'update', date });
+      }
 
     return (
         
@@ -71,12 +66,12 @@ const BookingForm = () => {
         <label>Enter your number:</label>
         <input type='text' name="number" value={inputs.number || ""} onChange={handleChange} required/>
         {errors.number && <span style={{ color: "red" }}>{errors.number}</span>}
-        
+
         <label>Enter Your email:</label>
         <input type='email' name="email" value={inputs.email || ""} onChange={handleChange}required/>
 
         <label htmlFor="res-date">Choose date</label>
-        <input type="date" id="res-date" required/>
+        <input type="date" id="res-date" onChange={handleDateChange} required/>
 
         <label htmlFor="res-time">Choose time</label>
         <select id="res-time" name="time" value={inputs.time || ""} onChange={handleChange}required>
