@@ -1,9 +1,9 @@
 import React, {useState} from "react";
 import { submitAPI } from './api';
-import { updateTimes } from "./BookingPage";
+import { updateTimes} from "./BookingPage";
 
 
-const BookingForm = ({ availableTimes, dispatch }) => {
+const BookingForm = ({ availableTimes, dispatch, submitForm }) => {
     console.log("availableTimes: ", availableTimes);
     const [inputs, setInputs] = useState({});
     const [errors, setErrors]= useState({});
@@ -33,7 +33,10 @@ const BookingForm = ({ availableTimes, dispatch }) => {
             // handle success case, e.g. show success message
             alert("Success!");
             setInputs({});
-            event.target.reset(); // reset the form
+            event.target.reset();
+             // reset the form
+             submitForm();
+            
           } else {
             // handle failure case, e.g. show error message
             alert("Failed to submit form.");

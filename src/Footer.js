@@ -19,12 +19,12 @@ return (
       </Box>
       <Box className="footerElement">
         <ul className="footerList">
-            <li>Home</li>
-            <li>About</li>
-            <li>Menu</li>
-            <li>Reservation</li>
-            <li>Order Online</li>
-            <li>Login</li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/menu">Menu</a></li>
+        <li><a href="/booking">Reservation</a></li>
+        <li><a href="/order-online">Order Online</a></li>
+        <li><a href="/login">Login</a></li>
         </ul>
         </Box>
       <Box className="footerElement">

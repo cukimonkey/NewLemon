@@ -2,7 +2,8 @@ import { VStack } from '@chakra-ui/react';
 import './App.css';
 import BookingForm from "./BookingForm";
 import React, { useReducer, useEffect } from 'react';
-import { fetchAPI } from './api';
+import { fetchAPI, submitAPI } from './api';
+import { useNavigate } from "react-router-dom";
 
 
 const initializeTimes = async () => {
@@ -62,6 +63,19 @@ function BookingPage() {
       dispatch({ type: 'update', payload: availableTimes });
     };
   
+    const navigate = useNavigate();
+    const submitForm = async (formData) =>{
+        try { const response = await submitAPI(formData);
+            if (response) {
+                navigate('/booking-confirmation');
+            }
+        }
+            catch(error) {
+                console.log(error);
+            }
+        }
+    
+
 return (
         
         <VStack style={{
@@ -75,9 +89,9 @@ return (
         }}>
         <h1 textAlign='center'>Book your Table</h1>
         <br></br>
-        <BookingForm availableTimes={availableTimes} handleDateChange={handleDateChange}/>
+        <BookingForm availableTimes={availableTimes} handleDateChange={handleDateChange} submitForm={submitForm}/>
         </VStack>
-        
+
     )
 }
 

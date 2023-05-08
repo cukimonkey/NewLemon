@@ -40,7 +40,9 @@ const Specials = () => {
                 </Box>
                 <Spacer />
                 <ButtonGroup>
+                    <a href="/menu">
                   <Button className="button2">Online Menu</Button>
+                  </a>
                 </ButtonGroup>
        </Flex>
        <Flex className="cards"

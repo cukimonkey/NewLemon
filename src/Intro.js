@@ -27,9 +27,8 @@ const  Intro = () =>  (
         <h1>Little Lemon</h1>
         <h2>Chicago</h2>
         <p>We are a family owned Mediterreanian Restaurant, focused on traditional recipes served with a modern twist.</p><br></br>
-        <button className='button2'
-        
-        >Reserve a Table</button>
+        <a href="/booking"><button className='button2'
+        >Reserve a Table</button></a>
     </Box>
     <Box className="imageBox">
         <img src={process.env.PUBLIC_URL + "/restaurantfood.jpg"} height='400px' style={{ borderRadius: '16px' }} alt="restaurantfood"/>

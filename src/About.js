@@ -36,6 +36,7 @@ Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit 
             borderRadius: '16px',
             }} 
             alt="restaurantfood"/>
+           
     </Box>
   </Flex>
 );
