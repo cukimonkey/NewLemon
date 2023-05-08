@@ -6,18 +6,18 @@ const seededRandom = function (seed) {
       return (s = (s * a) % m) / m;
     };
   };
-  
+
   const fetchAPI = function (date) {
     // console.log("Date received in fetchAPI: ", date);
     // return new Promise((resolve, reject) => {
-      return new Promise((resolve, reject) => {  
+      return new Promise((resolve, reject) => {
     if (!(date instanceof Date)) {
         reject(new Error('Invalid date argument'));
         return;
       }
       let result = [];
       let random = seededRandom(date.getDate());
-  
+
       for (let i = 17; i <= 23; i++) {
         if (random() < 0.5) {
           result.push(i + ":00");
@@ -34,13 +34,5 @@ const seededRandom = function (seed) {
     });
   };
   
-  const submitAPI = function (formData) {
-    return new Promise((resolve, reject) => {
-      // Simulate API delay of 1 second
-      setTimeout(() => {
-        resolve(true);
-      }, 1000);
-    });
-  };
 
-  export { fetchAPI, submitAPI };
+  export {fetchAPI, submitAPI};

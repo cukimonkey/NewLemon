@@ -28,16 +28,15 @@ const Testimonials = () => {
     paddingRight= '10%'
     paddingTop= '50px'
     paddingButtom= '50px'
-    backgroundColor= '#EDEFEE'>
+    backgroundColor= '#EDEFEE'
+    >
       <Container >
       <Flex display='flex' justifyContent='center'>
                 <Box >
                   <h1>Testimonials</h1>
                 </Box>
        </Flex>
-       <Flex className="cards2"
-       
-
+       <Flex className="cards2" gap='20px'
         >
           {reviews.map((reviews) => (
 

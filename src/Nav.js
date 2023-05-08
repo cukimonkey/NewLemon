@@ -10,7 +10,7 @@ function Nav(){
             marginRight: '50px',
             justifyContent: 'center',
             alignItems: 'center',
-            gap: '18px'
+            gap: '80px'
         }} >
             <div>
                 <img className="navLogo" src={process.env.PUBLIC_URL + "/Main logo.png"} height="40px" alt="logo" />

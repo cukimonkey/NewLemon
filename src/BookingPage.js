@@ -43,9 +43,11 @@ const initializeTimes = async () => {
 
 export { initializeTimes, updateTimes };
 
-function BookingPage() {  
+
+//Booking page function
+function BookingPage() {
     const [availableTimes, dispatch] = useReducer(reducer, []);
-  
+
     useEffect(() => {
       const initializeTimes = async () => {
         const today = new Date();
