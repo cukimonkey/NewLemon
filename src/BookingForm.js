@@ -33,6 +33,7 @@ const BookingForm = ({ availableTimes, dispatch }) => {
             // handle success case, e.g. show success message
             alert("Success!");
             setInputs({});
+            event.target.reset(); // reset the form
           } else {
             // handle failure case, e.g. show error message
             alert("Failed to submit form.");
